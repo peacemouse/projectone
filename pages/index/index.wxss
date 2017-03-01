@@ -1,0 +1,313 @@
+/**index.wxss**/
+.header{
+  width:100%;
+  height:44px;
+  line-height:44px;
+  background:#31c27c;
+
+}
+.header image{
+    float: left;
+    display: block;
+    width: 90px;
+    height: 25px;
+    margin: 9px 0 0 10px;
+}
+.header .search{
+    position: absolute;
+    display: inline-block;
+    right: 10px;
+    top: 8px;
+    height: 28px;
+    padding: 0 12px;
+    line-height: 28px;
+    border-radius: 99px;
+    font-size: 14px;
+    background: #149c5a;
+    color: #fff;
+}
+/*导航*/
+.nav{
+  width:100%;
+  height:40px;
+  line-height:40px;
+  display:-webkit-flex;
+}
+.nav text{
+  display:block;
+  flex:1;
+  text-align: center;
+  font-size:16px;
+}
+.nav .active{
+   color:#31c27c;
+   box-shadow: inset 0 -2px 0 #31c27c;
+}
+/*设置轮播图的样式*/
+.slide-image{
+  width:100%;
+  height:150px;
+}
+/*给电台设置样式*/
+.tui-title{
+  display:block;
+  font-size:16px;
+  height:24px;
+  line-height:24px;
+  color:#000;
+  margin-bottom:10px;
+  
+}
+.contain-tui{
+  margin:10px;
+}
+.wraper{
+  background:#f4f4f4;
+}
+.radio{
+  display:flex;
+  flex-wrap:wrap;
+  
+}
+.radio>view{
+  background:#fff;
+  width:48.5%;
+  
+}
+.radio>view:nth-child(odd){
+   margin-right:3%;
+}
+.radio view image{
+  width:100%;
+  height:146px;
+  margin-bottom:5px;
+}
+.tui-content{
+    padding:0 7px 5px;
+}
+.radio text.h3{
+  display:block;
+  font-size:16px;
+  height:36px;
+  line-height:18px;
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  
+}
+.radio text.span{
+  font-size:12px;
+  color:#000;
+}
+.mb10 view{
+  margin-bottom:10px;
+}
+
+/*排行榜的样式*/
+.loading{
+  width:100px;
+  height:100px;
+  display: block;
+  margin:60px auto 50px;
+}
+.topic-item{
+  height:100px;
+  background:white;
+  margin:10px;
+  position:relative;
+  
+}
+.topic-item .post{
+  width:100px;
+  height:100px;
+  position:absolute;
+  left:0px;
+  top:0px;
+}
+.topic-item .erji{
+  width:10px;
+  height:10px;
+  position:absolute;
+  left:5px;
+  bottom:7px;
+  margin-right:3px;
+}
+.topic-item .listencount{
+  /*display:block;*/
+  position:absolute;
+  font-size:12px;
+  left:18px;
+  bottom:5px;
+  color:#fff;
+  opacity:.6;
+
+}
+.topic-item .text-contain{
+  margin-left:110px;
+  margin-top:5px;
+}
+.contain-texttitle{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.text-title{
+  font-size:16px;
+  height:24px;
+  line-height:24px;
+  margin-bottom: 5px;
+
+}
+.song-assmble{
+  font-size:14px;
+  height:21px;
+  line-height:21px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  position:relative;
+}
+.song-name{
+  color:#000;
+  margin-left:8px;
+  margin-right:5px;
+  
+}
+.singername{
+  color: rgba(0,0,0,.5);
+}
+.icon{
+  position:absolute;
+  top:43px;
+  right:10px;
+  color: rgba(0,0,0,.5);
+}
+
+
+/*搜索页面的样式*/
+.search2{
+  width:100%;
+  height:36px;
+  margin:10px; 
+  background:white;
+  position:relative;
+  border-radius:3px;
+}
+.search2 input{
+  width:260px;
+  height:20px;
+  line-height:20px;
+  padding-top:4px;
+  margin-left:36px;
+  font-size:14px;
+  border:none;
+  outline:none;
+}
+.search2 .scale image{
+  width:18px;
+  height:18px;
+  position:absolute;
+  padding:9px;
+}
+.search2 .close{
+  width:18px;
+  height:18px;
+  font-size: 12px;
+  line-height:18px;
+  text-align: center;
+  display: block;
+  position: absolute;
+  right:70px;
+  top:10px;
+  border-radius:50%;
+  background:#b1b1b1;
+  color:white;
+}
+.search2 .cancel{
+  width:48px;
+  height:36px;
+  background:#f4f4f4;
+  line-height: 36px;
+  text-align: center;
+  font-size:12px;
+  position:absolute;
+  right:8px;
+  top:0px;
+
+}
+.hot-block{
+  background:white;
+  padding:15px 15px 10px 15px;
+}
+.hot-searchtitle{
+  font-size:14px;
+  line-height:21px;
+  margin-bottom: 8px;
+  color: rgba(0,0,0,.6);
+  
+}
+.hot-alltitle{
+  font-size:14px;
+  width:86px;
+  height:30px;
+  line-height:30px;
+  padding:0 10px;
+  border-radius:15px;
+  border:solid 1px #fc4524;
+  color: #fc4524;
+  border-color: #fc4524;
+  display: inline-block;
+  margin-right:10px;
+  margin-top:10px;
+  
+
+}
+.random-song{
+  font-size:14px;
+  height:30px;
+  color:#000;
+  line-height:30px;
+  padding:0 10px;
+  margin-right:14px;
+  margin-bottom:10px;
+  border:solid 1px rgba(0,0,0,.5);
+  border-radius:99px;
+  display: inline-block;
+}
+.showlist{
+  background:white;
+}
+.search-list{
+  height:55px;
+  line-height:55px;
+  color:#000;
+  font-size:16px;
+  border-top:solid 1px #F1F1F1;
+  position:relative;
+  overflow: hidden;
+}
+.search-list image{
+  width:22px;
+  height:20px;
+  position:absolute;
+  top:18px;
+  left:18px;
+}
+.song{
+  padding-left:56px;
+}
+.songname{
+  display:inline-block;
+  margin-top:10px;
+  position:absolute;
+  top:-15px;
+  left:70px;
+}
+.singername{
+
+  font-size:12px;
+  text-align: center;
+  position:absolute;
+  top:15px;
+  left:70px;
+}

@@ -1,0 +1,100 @@
+
+<!--index.wxml-->
+<view class="header">
+  <image src="../../img/logo.png"></image>
+  <button class="search">下载APP</button>
+</view>
+<view class="nav">
+  <text class="{{ nownav == 0 ? 'active' : ''}}" data-index="0" bindtap="changenav">推荐</text>
+  <text class="{{ nownav == 1 ? 'active' : ''}}" data-index="1" bindtap="changenav">排行版</text>
+  <text class="{{ nownav == 2 ? 'active' : ''}}" data-index="2" bindtap="changenav">搜索</text>
+</view>
+
+<!--推荐-->
+<scroll-view wx:if='{{nownav == 0 }}' class="wraper">
+  <swiper indicator-dots="true" autoplay="true" interval="2000">
+    <block wx:for="{{tuijiandata.slider}}">
+      <swiper-item>
+        <image src="{{item.picUrl}}" class="slide-image" width="320px" height="130" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="contain-tui">
+    <text class="tui-title">电台</text>
+    <view class="radio">
+      <view wx:for="{{  tuijiandata.radioList }}">
+        <image src="{{ item.picUrl}}" />
+        <view class="tui-content">
+          <text class="h3">{{item.Ftitle}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="contain-tui">
+    <text class="tui-title">热门歌单</text>
+    <view class="radio mb10">
+      <view wx:for="{{  tuijiandata.songList }}">
+        <image src="{{ item.picUrl}}" />
+        <view class="tui-content">
+          <text class="h3">{{item.songListDesc}}</text>
+          <text class="span">{{item.songListAuthor}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<!--排行榜-->
+<scroll-view wx:if='{{ nownav ==1 }}' class="wraper">
+  <image src="../../img/loading.gif" class="loading" wx:if='{{ ifLoading }}' />
+  <view class="topic-item" wx:for="{{  orderdata }}">
+    <image class="post" src="{{item.picUrl}}" />
+    <image class="erji" src="../../img/耳机.png" />
+    <text class="listencount">{{ item.listenCount }}</text>
+    <view class="text-contain">
+      <view class="contain-texttitle">
+               <text class="text-title">{{ item.topTitle}}</text>
+      </view>
+
+      <view wx:for="{{item.songList}}" class="song-assmble">
+        <text class="song-number">{{index+1}}</text>
+        <text class="song-name">{{item.songname}}</text>
+        <text class="singername">-{{item.singername}}</text>
+      </view>
+      <text class="icon">></text>
+    </view>
+  </view>
+</scroll-view>
+
+<!--搜索-->
+<scroll-view wx:if='{{ nownav == 2 }}' class="wraper">
+  <view class="search2">
+    <view class="scale"><image src="../../img/scale.png" /></view>
+    <input placeholder="搜索歌曲、歌单、专辑" bindfocus="iffocus"  bindinput="textInput" value="{{inputVal}}" bindconfirm="finish"/>
+    <view class="cancel" wx:if='{{ change }}' bindtap="cancel">取消</view>
+    <view class="close" wx:if='{{ close }}' bindtap="close">×</view>
+  </view>
+  <view class="hot-block" wx:if='{{showList}}'>
+     <text class="hot-searchtitle">热门搜索</text>
+     <view class="hot-assemble" >
+         <navigator class="hot-alltitle" url="{{hotdata.special_url}}">{{hotdata.special_key}}</navigator>
+         <text class="random-song" wx:for="{{hotdata.hotkey}}" wx:if='{{ index < randNum }}' bindtap='keySearch' data-text='{{item.k}}'>{{item.k}}</text>
+     </view>
+  
+  </view>
+
+<!--搜索结果的页面-->
+<view wx:if='{{ !showList }}' class="showlist">
+  <view class="search-list" wx:for='{{ list }}'>
+    <image src="../../img/yinfu.png"/> 
+    <text class="song" class="songname">{{ item.albumname}}</text><br/>
+    <text class="singername">{{ item.singer[0].name}}</text>
+    
+      
+  </view>
+</view>
+
+
+
+
+</scroll-view>
